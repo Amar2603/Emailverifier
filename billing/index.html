@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Details | E-fly</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-shape shape-top"></div>
+    <div class="bg-shape shape-bottom"></div>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <span class="logo-brand">E-fly</span>
+                <div class="logo-dot"></div>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="../verify/index.html" class="nav-link">
+                    <span>✅</span> Email Verification
+                </a>
+                <a href="../credits/index.html" class="nav-link">
+                    <span>💳</span> Credit Balance
+                </a>
+                <a href="../billing/index.html" class="nav-link active">
+                    <span>📝</span> Billing Details
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p class="credits-display">Available Credits</p>
+                <p class="credits-count">122</p>
+                <button class="buy-btn" onclick="window.location.href='../credits/index.html'">Buy Credits</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="user-meta">
+                    <span class="user-name">Shoaib Khan</span>
+                    <div class="user-avatar">SK</div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="billing-layout">
+                    <!-- Billing Information -->
+                    <div class="card billing-card">
+                        <h2 class="card-title">Billing Information</h2>
+                        
+                        <div class="tab-container">
+                            <button class="tab active" onclick="switchBillingTab('personal')">Personal</button>
+                            <button class="tab" onclick="switchBillingTab('company')">Company</button>
+                        </div>
+
+                        <form class="billing-form" id="personalForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="input-field" value="Shoaib" placeholder="Enter first name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="input-field" value="Khan" placeholder="Enter last name">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="input-field" value="shoaib.khan@example.com" placeholder="Enter email address">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Country</label>
+                                    <select class="input-field">
+                                        <option>India</option>
+                                        <option>United States</option>
+                                        <option>United Kingdom</option>
+                                        <option>Canada</option>
+                                        <option>Australia</option>
+                                        <option>Germany</option>
+                                        <option>France</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">City</label>
+                                    <input type="text" class="input-field" value="Mumbai" placeholder="Enter city">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Address</label>
+                                <input type="text" class="input-field" value="123 Main Street, Andheri East" placeholder="Enter address">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">State/Province</label>
+                                    <input type="text" class="input-field" value="Maharashtra" placeholder="Enter state">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">ZIP/Postal Code</label>
+                                    <input type="text" class="input-field" value="400069" placeholder="Enter ZIP code">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-primary save-btn">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="card payment-card">
+                        <h2 class="card-title">Payment Method</h2>
+                        
+                        <div class="saved-cards">
+                            <div class="card-option active">
+                                <div class="card-radio"></div>
+                                <div class="card-icon">💳</div>
+                                <div class="card-details">
+                                    <p class="card-number">•••• •••• •••• 4242</p>
+                                    <p class="card-expiry">Expires 12/28</p>
+                                </div>
+                                <span class="default-badge">Default</span>
+                            </div>
+                            
+                            <div class="card-option">
+                                <div class="card-radio"></div>
+                                <div class="card-icon">💳</div>
+                                <div class="card-details">
+                                    <p class="card-number">•••• •••• •••• 5555</p>
+                                    <p class="card-expiry">Expires 08/27</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn-secondary add-card-btn">+ Add New Card</button>
+
+                        <!-- Billing Email -->
+                        <div class="billing-email-section">
+                            <h3>Billing Email</h3>
+                            <p>We'll send your invoices to this email address</p>
+                            <div class="email-input-group">
+                                <input type="email" class="input-field" value="shoaib.khan@example.com" placeholder="Enter billing email">
+                                <button class="btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Billing History -->
+                    <div class="card billing-history-card">
+                        <h2 class="card-title">Billing History</h2>
+                        
+                        <div class="invoice-list">
+                            <div class="invoice-item">
+                                <div class="invoice-info">
+                                    <p class="invoice-date">Feb 25, 2026</p>
+                                    <p class="invoice-description">2M Email Package - Monthly</p>
+                                </div>
+                                <div class="invoice-amount">
+                                    <span class="amount">$800.00</span>
+                                    <span class="status paid">Paid</span>
+                                </div>
+                                <button class="download-btn">⬇</button>
+                            </div>
+                            
+                            <div class="invoice-item">
+                                <div class="invoice-info">
+                                    <p class="invoice-date">Jan 25, 2026</p>
+                                    <p class="invoice-description">2M Email Package - Monthly</p>
+                                </div>
+                                <div class="invoice-amount">
+                                    <span class="amount">$800.00</span>
+                                    <span class="status paid">Paid</span>
+                                </div>
+                                <button class="download-btn">⬇</button>
+                            </div>
+                            
+                            <div class="invoice-item">
+                                <div class="invoice-info">
+                                    <p class="invoice-date">Dec 25, 2025</p>
+                                    <p class="invoice-description">1M Email Package - Monthly</p>
+                                </div>
+                                <div class="invoice-amount">
+                                    <span class="amount">$699.00</span>
+                                    <span class="status paid">Paid</span>
+                                </div>
+                                <button class="download-btn">⬇</button>
+                            </div>
+                        </div>
+
+                        <button class="btn-secondary view-all-btn">View All Invoices</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Switch billing tabs
+        function switchBillingTab(tabName) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Card selection
+        document.querySelectorAll('.card-option').forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelectorAll('.card-option').forEach(o => o.classList.remove('active'));
+                option.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

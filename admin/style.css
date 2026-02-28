@@ -1,0 +1,319 @@
+/* Admin Dashboard Styles */
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.stat-icon.users {
+    background: rgba(59, 130, 246, 0.15);
+}
+
+.stat-icon.verifications {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.stat-icon.revenue {
+    background: rgba(245, 158, 11, 0.15);
+}
+
+.stat-icon.active {
+    background: rgba(0, 128, 128, 0.15);
+}
+
+.stat-info .stat-label {
+    font-size: 13px;
+    color: var(--text-gray);
+    margin-bottom: 4px;
+}
+
+.stat-info .stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.stat-change {
+    font-size: 12px;
+    color: var(--text-gray);
+    margin-top: 4px;
+    display: block;
+}
+
+.stat-change.positive {
+    color: var(--success);
+}
+
+/* Card Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* User Cell */
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar-sm {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-teal), var(--dark-teal));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.user-avatar-sm.JD { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.user-avatar-sm.SM { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.user-avatar-sm.BW { background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+/* Plan Badge */
+.plan-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.plan-badge.basic {
+    background: rgba(100, 116, 139, 0.15);
+    color: var(--text-gray);
+}
+
+.plan-badge.pro {
+    background: rgba(0, 128, 128, 0.15);
+    color: var(--primary-teal);
+}
+
+.plan-badge.enterprise {
+    background: rgba(139, 92, 246, 0.15);
+    color: #8b5cf6;
+}
+
+/* Status Badge */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-badge.active {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--success);
+}
+
+.status-badge.inactive {
+    background: rgba(100, 116, 139, 0.15);
+    color: var(--text-gray);
+}
+
+/* Transaction List */
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background: var(--bg-light);
+}
+
+.transaction-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.transaction-info {
+    flex: 1;
+}
+
+.transaction-user {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.transaction-desc {
+    font-size: 12px;
+    color: var(--text-gray);
+    margin-top: 2px;
+}
+
+.transaction-amount {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.transaction-amount.positive {
+    color: var(--success);
+}
+
+.transaction-amount.negative {
+    color: var(--danger);
+}
+
+/* System Status */
+.system-status {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--bg-light);
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.status-dot.active {
+    background: var(--success);
+}
+
+.status-dot.warning {
+    background: #f59e0b;
+}
+
+.status-dot.error {
+    background: var(--danger);
+}
+
+.status-item span:nth-child(2) {
+    flex: 1;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.status-text {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Quick Actions */
+.quick-actions h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.action-buttons .btn {
+    flex: 1;
+    text-align: center;
+}
+
+/* Logout Button */
+.logout-btn {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+/* Header Title */
+.header-title h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.header-title p {
+    font-size: 14px;
+    color: var(--text-gray);
+    margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .transaction-item {
+        flex-wrap: wrap;
+    }
+}

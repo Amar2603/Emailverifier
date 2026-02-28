@@ -1,0 +1,22 @@
+:root {
+    --primary-teal: #008080;
+    --dark-teal: #004d4d;
+    --gradient-teal: linear-gradient(135deg, #00a8a8 0%, #004d4d 100%);
+    --bg-light: #f0f7f7;
+    --white: #ffffff;
+    --text-dark: #1a3a3a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="left-panel">
+        <h1>Hello, Welcome!</h1>
+        <p>Don't have an account?</p>
+        <a href="../signup/index.html">
+            <button class="switch-btn">Create Account</button>
+        </a>
+    </div>
+
+    <div class="right-panel">
+        <form id="loginForm">
+            <h1>Login</h1>
+            <p id="message"></p>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <a href="../login/dashboard.html"><button type="submit">Login</button></a>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+            
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                const messageEl = document.getElementById('message');
+                
+                if (result.success) {
+                    messageEl.className = 'success';
+                    messageEl.textContent = result.message;
+                    setTimeout(() => {
+                        window.location.href = '/dashboard.html';
+                    }, 1500);
+                } else {
+                    messageEl.className = 'error';
+                    messageEl.textContent = result.message;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+
+</div>
+
+</body>
+</html>
